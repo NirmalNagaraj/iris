@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Iris</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Page is being built</h1>
-    </div>
+
+  <!-- Placeholder for the navbar -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Header section -->
+  <div class="header">
+    <h2>Scroll Down</h2>
+    <p>Scroll down to see the sticky effect.</p>
+  </div>
+
+  <!-- Main content section -->
+  <div class="content">
+    <h3>Sticky Navigation Example</h3>
+    <p>The navbar will stick to the top when you reach its scroll position.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet...</p>
+    <p>More text...</p>
+    li*50
+  </div>
+
+  <script>
+    function loadNavbar() {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'nav.html', true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          document.getElementById('nav-placeholder').innerHTML = xhr.responseText;
+        }
+      };
+      xhr.send();
+    }
+
+    loadNavbar();  // Call this function to load the navbar when the page loads
+  </script>
+
 </body>
 </html>

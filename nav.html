@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wide Sticky Navbar with Left-Aligned Logo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: black;
+        }
+        .navbar {
+            position: sticky;
+            top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 50px;
+            margin: 20px auto;
+            width: 50%;
+            max-width: 1200px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            z-index: 5;
+        }
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+        .navbar img {
+            height: 40px;
+            width: auto;
+            margin-right: 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #121212;
+            padding: 10px 15px;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #007bff;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            min-width: 160px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            z-index: 10;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: #121212;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .request-button {
+            background-color: rgba(0, 123, 255, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 15px;
+        }
+        .request-button:hover {
+            background-color: rgba(0, 123, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="./iris-logo.svg" alt="Iris Logo">
+        </div>
+        <div class="navbar-right">
+            <a href="#">Home</a>
+            <div class="dropdown">
+                <a href="#">Products</a>
+                <div class="dropdown-content">
+                    <a href="#">Product 1</a>
+                    <a href="#">Product 2</a>
+                    <a href="#">Product 3</a>
+                </div>
+            </div>
+            <a href="#">About</a>
+            <button class="request-button">Request</button>
+        </div>
+    </nav>
+
+    <div style="height: 2000px;">
+        <!-- This div is just to demonstrate the sticky behavior -->
+        <h1 style="color: white; text-align: center; padding-top: 100px;">Scroll down to see the sticky navbar in action</h1>
+    </div>
+</body>
+</html>
