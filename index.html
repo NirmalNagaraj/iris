@@ -3,570 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    :root {
-      --primary-gradient: linear-gradient(90deg, rgb(12, 255, 210) 0%, rgb(23, 250, 255) 48.65%, rgb(0, 191, 255) 100%);
-      --font-heading: "IBM Plex Mono", monospace;
-      --font-body: "IBM Plex Sans", "IBM Plex Sans Placeholder", sans-serif;
-      --button-gradient: linear-gradient(135deg, #0cffd2 11%, rgb(23, 250, 255) 51.35%, rgb(0, 191, 255) 100%);
-      --font-line-spacing:30px;
-    }
-    body{
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
-
-    .home-container {
-      
-      font-family: var(--font-body);
-      background-color: rgba(5,17,24,255);
-    }
-
-    .navbar {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.325);
-      border: solid;
-      border-color: rgba(2, 249, 254, 0.2);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      padding: 2px 5px;
-      border-radius: 50px;
-      width: 40%;
-      max-width: 1200px;
-      z-index: 1000;
-    }
-
-    .navbar-left img {
-      height: 30px;
-      width: auto;
-      padding: 5px;
-    }
-    .navbar-right {
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: white;
-      padding: 10px 15px;
-      transition: color 0.3s ease;
-    }
-
-    .navbar a:hover {
-      color: rgba(16, 181, 226, 0.7);
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown > a::after {
-      font-size: 0.7em;
-      margin-left: 5px;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      min-width: 160px;
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      z-index: 1;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content a {
-      color: white;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown-content a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .request-button {
-    background-color: rgba(171, 171, 171, 0.836);
-    color: rgb(253, 253, 253);
-    border: none;
-    border: solid;
-    border-color: rgba(2, 249, 254, 0.2);
-    padding: 10px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .request-button span {
-    display: inline-block;
-    transition: all 0.3s ease;
-  }
-
-  .request-button .icon {
-    opacity: 0;
-    width: 0;
-    margin-left: 0;
-    transition: all 0.3s ease;
-  }
-
-  .request-button:hover {
-    padding-right: 20px;
-    background-image: var(--button-gradient); 
-    }
-
-  .request-button:hover .icon {
-    opacity: 1;
-    width: 20px;
-    margin-left: 10px;
-  }
-
-
-    .hero-section {
-      position: relative;
-      height: 100vh;
-      width: 100%;
-      background-image: url('https://framerusercontent.com/images/oC0GHJxu7cD4LXmigSIcGUKL8M.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .hero-section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-
-    .hero-section::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 10%;
-      background: rgb(0, 0, 0);
-      z-index: 2;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      color: white;
-      text-align: center;
-      padding: 0 20%;
-      max-width: 80%;
-    }
-
-    .hero-content h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      font-family: var(--font-heading);
-    }
-
-  .content-section {
-  position: relative;
-  background-color: rgba(5,17,24,255);
-  padding: 5% 10%;
-  z-index: 3;
-  margin-top: -20px; /* To slightly overlap with hero-section */
-}
-
-.content-section p {
-  font-size: 1.2rem;
-}
-.content-section h1,h2{
-  font-family: var(--font-heading);
-  color: azure;
-}
-.content-section h1 {
-  font-family: var(--font-heading);
-  background: var(--primary-gradient); /* Apply the gradient */
-  -webkit-background-clip: text; /* Ensures gradient is clipped to text */
-  -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
-}
-
-.content-section p{
-  font-family: var(--font-body);
-  color: azure;
-  line-height: var(--font-line-spacing);
-}
-.product-container {
-  padding: 100px 0px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 60px;
-  justify-items: center; /* Center cards horizontally */
-}
-
-.product-card {
-  width: 70%;
-  background: rgba(211, 211, 211, 0.019); /* Glass effect */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 50px;
-  box-shadow: 0 41px 90px #08f8fe08, 0 164px 164px #08f8fe08, 0 368px 221px #08f8fe05, 0 655px 262px #08f8fe00, 0 1023px 287px #08f8fe00; /* New box shadow */
-  color: white;
-  transition: transform 0.3s ease;
-  line-height: var(--font-line-spacing);
-  border: 1px solid rgba(23, 250, 255, 0.2); /* Border color */
-}
-
-.product-card:hover {
-  transform: scale(1.05);
-}
-
-.card-icon {
-  width: max-content;
-  height: max-content;
-  margin: 0 auto 10px;
-  margin-top: -80px;
-  border-radius: 50%;
-  background-image: var(--primary-gradient);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-icon img {
-  width: 50px;
-  height: 50px;
-  padding: 5px;
-}
-
-.card-content p {
-  font-size: 1rem;
-  padding: 0 10px;
-}
-.bus-container{
-  background-color: rgba(5,17,24,255);
-  padding: 80px 300px;
-  text-align: center;
-  font-family: var(--font-heading);
-  font-weight: 400;
-  line-height: 3rem;
-  color: azure;
-}
-.bus-container span{
-  font-family: var(--font-heading);
-  background: var(--primary-gradient); /* Apply the gradient */
-  -webkit-background-clip: text; /* Ensures gradient is clipped to text */
-  -webkit-text-fill-color: transparent; /* Make text color transparent to show the gradient */
-
-}
-
-      .suite-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .suite-title {
-            font-size: 24px;
-            margin-bottom: 10px;
-            font-family: var(--font-heading);
-            color: azure;
-        }
-
-        .suite-subtitle {
-            font-size: 36px;
-            color: #0cffd2;
-            margin-bottom: 30px;
-            font-family: var(--font-heading);
-            background-color: var(--primary-gradient);
-        }
-
-        .suite-cards {
-            display: flex;
-            gap: 20px;
-            justify-content: space-between;
-        }
-
-        .suite-card{
-            background-color: #0707072c;
-            border-radius: 10px;
-            padding: 20px;
-            width: calc(33.33% - 14px);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-            border: solid;
-            border-color:rgba(72, 151, 84, 0.2);
-
-        }
-
-        .suite-card-content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            font-family: var(--font-heading);
-            color: azure;
-        }
-
-        .suite-card-image {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .suite-card-description {
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 60px;
-        }
-
-        .suite-button {
-            color: rgb(1, 1, 1);
-            font-family: var(--font-body);
-            font-weight: 400;
-            font-size: large;
-            border: solid 1px rgba(2, 249, 254, 0.2);
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            overflow: hidden;
-            position: absolute;
-            bottom: -50px;
-            left: 20px;
-            right: 20px;
-            text-decoration: none;
-            box-shadow: rgba(8, 248, 254, 0.1) 0px 4px 9px 0px, rgba(8, 248, 254, 0.09) 0px 16px 16px 0px, rgba(8, 248, 254, 0.05) 0px 35px 21px 0px, rgba(8, 248, 254, 0.01) 0px 62px 25px 0px, rgba(8, 248, 254, 0) 0px 98px 27px 0px;;
-        }
-
-        .suite-button span {
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .suite-button .icon {
-            opacity: 0;
-            width: 0;
-            margin-left: 0;
-            transition: all 0.3s ease;
-        }
-
-        .suite-card:hover .suite-button {
-            bottom: 20px;
-            padding-right: 40px;
-            background-image: var(--button-gradient);
-        }
-
-        .suite-card:hover .suite-button .icon {
-            opacity: 1;
-            width: 20px;
-            margin-left: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .suite-cards {
-                flex-direction: column;
-            }
-
-            .suite-card {
-                width: 100%;
-            }
-        }
-        .footer-container{
-          background-color: #111;
-        }
-        footer {
-      background-color: #111111;
-      padding: 40px;
-      display: flex;
-      justify-content:space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-.footersec{
-  display: flex;
-  justify-content:space-between;
-  gap:250px;
-}
-    .footer-section {
-      display: flex;
-      flex-direction: column;
-      margin: 0 20px;
-    }
-
-    .footer-section h4 {
-      color: #FFFFFF;
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-    }
-    
-    .footer-section a {
-      color: #888484;
-      text-decoration: none;
-      margin-bottom: 8px;
-      transition: color 0.3s ease;
-    }
-
-    .footer-section a:hover {
-      color: #ffffff;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      margin: 20px 0;
-    }
-
-    .social-icons a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      color: #111111;
-      border-radius: 8px;
-      margin: 0 10px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .social-icons a img {
-      width: 40px;
-      height: 40px;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      margin-top: 20px;
-      color: #888484;
-      font-size: 0.5rem;
-    }
-
-    .logo img {
-      width: 120px;
-      margin-bottom: 10px;
-      padding-top: 40px;;
-    }
-
-    .followus-section {
-      text-align: center;
-      color: azure;
-      margin: 50px 0;
-      
-    }
-
-    hr {
-      width: 900px;
-      margin: 20px auto;
-      border-color: #888484;
-    }
-
-    .location-container {
-            padding-top:100px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            width: 80%;
-            margin: 50px auto;
-            gap: 40px;
-        }
-
-        .outer-loc {
-            width: 100%;
-        }
-
-        .location-details {
-            font-size: 1rem;
-            color: rgba(0, 255, 170, 0.9);
-            flex: 1;
-        }
-
-        .location-details ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .location-details li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            font-size: 1rem;
-        }
-
-        .location-details li img {
-            margin-right: 10px;
-            width: 20px;
-            height: 20px;
-        }
-
-        .contact-form {
-            padding: 30px;
-            border-radius: 10px;
-            width: 400px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            flex: 1;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            background-color: #10171d;
-            color: #fff;
-        }
-
-        li {
-            color: white;
-        }
-
-        .contact-form input[type="submit"] {
-            background: linear-gradient(90deg, #00eaff, #00ffaa);
-            border: none;
-            color: #000;
-            cursor: pointer;
-            font-size: 1.1rem;
-            padding: 12px;
-            transition: 0.3s ease;
-        }
-
-        .contact-form input[type="submit"]:hover {
-            opacity: 0.8;
-        }
-</style>
-  <title>Home Page</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="global.css">
+  <title>Steam A Iris</title>
+  <script src="script.js"></script>
+  <link rel="icon" href="./favicon.png" type="image/png">
 </head>
 <body>
   <div class="home-container">
@@ -594,7 +35,7 @@
     </nav>
   
     <div class="hero-section">
-      <div class="hero-content">
+      <div class="hero-content grow-on-scroll">
         <h1>Making EV charging reliable with our <br>AI-enabled digital twin</h1>
         <button class="request-button">
           Request Demo
@@ -603,43 +44,43 @@
       </div>
     </div>
   
-    <div class="content-section">
+    <div class="content-section grow-on-scroll">
       <h2>The Platform</h2>
       <h1>What is Iris?</h1>
       <p>Iris is our intelligent digital twin software suite that transforms your charger and energy management methods, guaranteeing unparalleled reliability and energy efficiency, all while reducing costs.</p>
-      <div class="product-container">
-        <div class="product-card">
-          <div class="card-icon">
+      <div class="product-container grow-on-scroll">
+        <div class="product-card ">
+          <div class="product-card-icon">
             <img src="./brain.svg" alt="Icon 1">
           </div>
-          <div class="card-content">
+          <div class="product-card-content">
             <p>Comprehensive software Suite designed for charge point operators, fleet operators, Charger OEMs, energy managers and electric vehicle owners.</p>
           </div>
         </div>
       
         <div class="product-card">
-          <div class="card-icon">
+          <div class="product-card-icon">
             <img src="./brain.svg" alt="Icon 2">
           </div>
-          <div class="card-content">
+          <div class="product-card-content">
             <p>Data-driven innovation for reliable EV charging</p>
           </div>
         </div>
       
         <div class="product-card">
-          <div class="card-icon">
+          <div class="product-card-icon">
             <img src="./thunder.png" alt="Icon 3">
           </div>
-          <div class="card-content">
+          <div class="product-card-content">
             <p>Simplifying the journey to a sustainable future</p>
           </div>
         </div>
       
         <div class="product-card">
-          <div class="card-icon">
+          <div class="product-card-icon">
             <img src="./brain.svg" alt="Icon 4">
           </div>
-          <div class="card-content">
+          <div class="product-card-content">
             <p>Transform the way you manage stakeholders and assets in Electric Vehicle Charging Ecosystem</p>
           </div>
         </div>
@@ -647,11 +88,11 @@
     </div>
   
       
-      <div class="bus-container">
+      <div class="bus-container grow-on-scroll">
         <h1>Towards the vision of powering a <span>billion electric miles</span> everyday!</h1>
       </div>
   
-      <div class="suite-container">
+      <div class="suite-container grow-on-scroll">
         <h1 class="suite-title">Iris Suite</h1>
         <h2 class="suite-subtitle">Our Products</h2>
         <div class="suite-cards">
@@ -686,6 +127,7 @@
                 </a>
             </div>
         </div>
+        
     </div>
   
     <div class="outer-loc">
@@ -755,7 +197,7 @@
   </div>
 
 
-
+  
 
   
 </body>
