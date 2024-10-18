@@ -13,45 +13,49 @@
   <div class="home-container">
     <nav class="navbar">
       <div class="navbar-left">
-        <a href="./index.html"><img src="./iris-logo.svg" alt="Iris Logo"></a>
+          <a href="./index.html"><img src="assets/iris-logo.svg" alt="Iris Logo"></a>
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
       </div>
       <div class="navbar-right">
-        <a href="#">Home</a>
-        <div class="dropdown">
-          <a href="#">Products<span class="arrow">&#9662;</span></a>
-          <div class="dropdown-content">
-            <a href="./network.html">Network</a>
-            <a href="./echo.html">Echo</a>
-            <a href="./sense.html">Sense</a>
+          <a href="./index.html">Home</a>
+          <div class="dropdown" onclick="toggleDropdown(this)">
+            <a href="#">Products <span class="arrow">&#9662;</span></a>
+              <div class="dropdown-content">
+                  <a href="./network.html">Network</a>
+                  <a href="./echo.html">Echo</a>
+                  <a href="./sense.html">Sense</a>
+              </div>
           </div>
-        </div>
-        <a href="./about.html">About us</a>
-        <button class="request-button">
-          Request Demo
-          <img src="./up-right-arrow.png" alt="" class="icon">
-        </button>
-        
+          <a href="./about.html">About us</a>
+          <button class="request-button">
+              Request Demo
+              <img src="assets/up-right-arrow.png" alt="" class="icon">
+          </button>
       </div>
-    </nav>
+  </nav>
   
-    <div class="hero-section">
+    <section class="hero-section">
       <div class="hero-content grow-on-scroll">
         <h1>Making EV charging reliable with our <br>AI-enabled digital twin</h1>
         <button class="request-button">
           Request Demo
-          <img src="./up-right-arrow.png" alt="" class="icon">
+          <img src="assets/up-right-arrow.png" alt="" class="icon">
         </button>
       </div>
-    </div>
+    </section>
   
-    <div class="content-section grow-on-scroll">
+    <section class="content-section grow-on-scroll">
       <h2>The Platform</h2>
       <h1>What is Iris?</h1>
       <p>Iris is our intelligent digital twin software suite that transforms your charger and energy management methods, guaranteeing unparalleled reliability and energy efficiency, all while reducing costs.</p>
       <div class="product-container grow-on-scroll">
         <div class="product-card ">
           <div class="product-card-icon">
-            <img src="./brain.svg" alt="Icon 1">
+            <img src="assets/brain.svg" alt="Icon 1">
           </div>
           <div class="product-card-content">
             <p>Comprehensive software Suite designed for charge point operators, fleet operators, Charger OEMs, energy managers and electric vehicle owners.</p>
@@ -60,7 +64,7 @@
       
         <div class="product-card">
           <div class="product-card-icon">
-            <img src="./brain.svg" alt="Icon 2">
+            <img src="assets/brain.svg" alt="Icon 2">
           </div>
           <div class="product-card-content">
             <p>Data-driven innovation for reliable EV charging</p>
@@ -69,7 +73,7 @@
       
         <div class="product-card">
           <div class="product-card-icon">
-            <img src="./thunder.png" alt="Icon 3">
+            <img src="assets/thunder.png" alt="Icon 3">
           </div>
           <div class="product-card-content">
             <p>Simplifying the journey to a sustainable future</p>
@@ -78,21 +82,138 @@
       
         <div class="product-card">
           <div class="product-card-icon">
-            <img src="./brain.svg" alt="Icon 4">
+            <img src="assets/brain.svg" alt="Icon 4">
           </div>
           <div class="product-card-content">
             <p>Transform the way you manage stakeholders and assets in Electric Vehicle Charging Ecosystem</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   
       
-      <div class="bus-container grow-on-scroll">
+      <section class="bus-container grow-on-scroll">
         <h1>Towards the vision of powering a <span>billion electric miles</span> everyday!</h1>
-      </div>
+      </section>
+      <section class="road grow-on-scroll">
+        <div class="background-setup">
+            <div class="big-building bgprop">
+                <img src="assets/building.png" alt="">
+              
+            </div>
+    
+            <div class="small-charger bgprop">
+                <img src="assets/bunk.png" alt="">
+            </div>
+    
+            
+            <div class="plant bgprop">
+                <img src="assets/smalltree.png" alt="" >
+               </div>
+    
+               <div class="big-charger bgprop">
+                <img src="assets/iris-bunk.png" alt="">
+            </div>
+     
+               <div class="big-tree bgprop">
+               <img src="assets/chris-tree.png" alt="">
+    
+            </div>
+    
+            <div class="small-charger bgprop">
+                <img src="assets/building.png" alt="">
+            </div>
+    
+            <div class="small-charger bgprop">
+                <img src="assets/building.png" alt="">
+            </div>
+    
+            
+            <div class="big-charger bgprop">
+                <img src="assets/iris-bunk.png" alt="">
+            </div>
+    
+    
+            <div class="small-building bgprop">
+                <img src="assets/square-building.png" alt="">
+            </div>
+    
+               <div class="small-tree bgprop">
+                <img src="assets/tree.png" alt="">
+                </div>
+               
+    
+        
+                <div class="big-charger bgprop">
+                    <img src="assets/iris-bunk.png" alt="">
+                </div>
+    
+               
+             
+    
+              
+                <div class="big-building bgprop">
+                    <img src="assets/bunk.png" alt="">
+                
+                </div>
+    
+                <div class="small-charger bgprop">
+                    <img src="assets/building.png" alt="">
+                </div>
+        
+            
+                <div class="plant bgprop">
+                    <img src="assets/tree.png" alt="" >
+                   </div>
+    
+            
+                   <div class="big-charger bgprop">
+                    <img src="assets/iris-bunk.png" alt="">
+                </div>
+    
+     
+                <div class="big-tree bgprop">
+                    <img src="assets/chris-tree.png" alt="">
+         
+                 </div>
+     
+    
+                 <div class="big-building bgprop">
+                    <img src="assets/bunk.png" alt="">
+                  
+                </div>
+        
+                <div class="small-charger bgprop">
+                    <img src="assets/building.png" alt="">
+                </div>
+        
+                
+                <div class="plant bgprop">
+                    <img src="assets/tree.png" alt="" >
+                   </div>
+         
+                       
+    
+            
+            </div>
+        <div class="foreground">
+            <div class="vehicles">
+                <div class="bus">
+            
+                    <img src="assets/bus.png" alt=""></div>
+                <div class="car"><img src="assets/car.png" alt=""></div>
+                <div class="truck">
+                    <img src="assets/truck.png" alt="">
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="road"></div>
+        
+    </section>
   
-      <div class="suite-container grow-on-scroll">
+      <section class="suite-container grow-on-scroll">
         <h1 class="suite-title">Iris Suite</h1>
         <h2 class="suite-subtitle">Our Products</h2>
         <div class="suite-cards">
@@ -101,7 +222,7 @@
                     <img src="https://framerusercontent.com/images/3ZjJBrQRynebqnDloPzr1NTnkS8.png?scale-down-to=512" alt="Iris Network" class="suite-card-image">
                     <p class="suite-card-description">Intelligent EV charging network management software to simplify extensive networks</p>
                 </div>
-                <a href="#" class="suite-button">
+                <a href="assets/network.html" class="suite-button">
                     <span>Know More</span>
                     <span class="icon">→</span>
                 </a>
@@ -111,7 +232,7 @@
                     <img src="https://framerusercontent.com/images/sAnE2Efd7nCl7cxRsIjH9eAwfDk.png?scale-down-to=512" alt="Iris Sense" class="suite-card-image">
                     <p class="suite-card-description">All encompassing data tool for all your business needs without any complex coding skills!</p>
                 </div>
-                <a href="#" class="suite-button">
+                <a href="./echo.html" class="suite-button">
                     <span>Know More</span>
                     <span class="icon">→</span>
                 </a>
@@ -121,16 +242,16 @@
                     <img src="https://framerusercontent.com/images/ojKHemUQhQy2DN9fGTRaXk7aaw.png?scale-down-to=512" alt="Iris Echo" class="suite-card-image">
                     <p class="suite-card-description">Virtual Smart-Charger to test your CSMS quickly, effortlessly & at a lower cost across various scenarios</p>
                 </div>
-                <a href="#" class="suite-button">
+                <a href="./sense.html" class="suite-button">
                     <span>Know More</span>
                     <span class="icon">→</span>
                 </a>
             </div>
         </div>
         
-    </div>
+    </section>
   
-    <div class="outer-loc">
+    <section class="outer-loc">
       <div class="location-container">
           <!-- Location Details -->
           <div class="location-details">
@@ -159,20 +280,20 @@
               </form>
           </div>
       </div>
-  </div>
+  </section>
   
   <div class="footer-container">
     <footer>
       <div class="footersec">
       <div class="footer-section">
         <h4>Iris</h4><br>
-        <a href="#">Products</a><br>
-        <a href="#">About Us</a>
+        <a href="./network.html">Products</a><br>
+        <a href="./about.html">About Us</a>
       </div>
   
       <div class="footer-section">
         <h4>About Company</h4><br>
-        <a href="#">Steam-A</a>
+        <a href="./index.html">Steam-A</a>
       </div>
     </div>
       <div class="footer-section logo">

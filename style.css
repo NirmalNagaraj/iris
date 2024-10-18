@@ -554,6 +554,57 @@
             opacity: 0.8;
         }
         
+        .background-setup {
+          display: flex;
+          position: relative;
+          z-index: 1;
+          width: 100vw;
+          justify-content: space-around;
+          gap: 10px;
+          overflow: hidden; /* Prevent horizontal overflow */
+        }
+        
+        .bgprop {
+          position: relative; /* Ensure they are relative to background-setup container */
+          z-index: 1; /* Lower z-index to ensure they are behind the vehicles */
+        }
+        
+        .bgprop img {
+          height: 90px;
+          width: 90px;
+        }
+        
+        .vehicles {
+          display: flex;
+          position: relative;
+          bottom: 60px;
+          z-index: 99; /* Vehicles are in front of the background elements */
+          justify-content: space-around;
+          align-items: center;
+        }
+        
+        .vehicles div img {
+          height: 100px;
+          width: 80%;
+        }
+        
+        div.road {
+          width: 100%;
+          border: 3px solid white;
+          position: relative;
+          z-index: 100; /* Road stays on top */
+          bottom: 70px;
+        }
+        
+        .car {
+          position: relative;
+          top: 25px;
+        }
+        
+        body {
+          overflow-x: hidden; /* Ensure the body does not scroll horizontally */
+        }
+        
 
       
       
