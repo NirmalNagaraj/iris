@@ -170,6 +170,7 @@
   .feature-column {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 4 cards per row */
+    padding: 50px;
     gap: 50px; /* Space between the cards */
     max-width: 1200px;
     margin: 0 auto;
