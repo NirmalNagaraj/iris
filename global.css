@@ -99,6 +99,14 @@
   .dropdown-content a:hover {
     background-color: rgba(255, 255, 255, 0.2);
   }
+  .dropdown > a .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown:hover .arrow {
+    transform: rotate(-180deg);
+  }
   
   .request-button {
     background-color: rgba(171, 171, 171, 0.836);
